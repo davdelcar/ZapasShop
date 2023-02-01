@@ -1,12 +1,14 @@
 import express from "express";
 import shoes from "./src/routes/shoes.js";
 import cors from "cors";
-import users from "./src/routes/users.js"
+import users from "./src/routes/users.js";
+import stocks from "./src/routes/stocks.js";
 import morgan from "morgan";
 import { dbConection } from "./src/db/database.js";
 import carts from './src/routes/cart.js';
 const app = express();
 app.use(express.json())
+app.use("/stocks", stocks)
 app.use("/shoes", shoes);
 app.use("/users", users)
 app.use("/carts", carts)

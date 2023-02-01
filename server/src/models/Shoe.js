@@ -12,10 +12,6 @@ export const Shoe = db.define('Shoe', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    size: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
     color:{
         type: DataTypes.STRING,
         allowNull: false
@@ -23,15 +19,5 @@ export const Shoe = db.define('Shoe', {
     description: {
         type: DataTypes.TEXT,
         allowNull: true
-    },
-    quantity:{
-        type: DataTypes.INTEGER,
-        allowNull: false
     }
 },{timestamps: false});
-
-Shoe.hasMany(Stock)
-Stock.belongsTo(Shoe)
-
-Shoe.hasMany(CartShoe)
-CartShoe.belongsTo(Shoe)

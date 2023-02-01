@@ -11,6 +11,3 @@ export const Cart = db.define('Cart', {
         primaryKey: true
     }
 },{timestamps: true})
-
-Cart.hasMany(CartShoe)
-CartShoe.belongsTo(Cart)

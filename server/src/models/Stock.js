@@ -10,4 +10,4 @@ export const Stock = db.define('Stock', {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-})
+}, {timestamps: false})

@@ -1,18 +1,11 @@
 import { Router } from "express";
 import { Cart } from "../models/Cart.js";
+import * as CartController from "../controllers/CartController.js";
 
 const router = Router()
 
-router.get("/",async(req, res)=>{
-    try {
-        const carts = await Cart.findAll()
-        if(!carts) res.status(404).json({message: "Carts not found"})
-        else res.status(200).json(carts)
-    } catch (error) {
-        res.status(500)
-        console.error(error)
-    }
+router.get("/:userId", CartController.getCartByUserId)
 
-})
+router.post("/add", CartController.addShoesToCartByUserId)
 
 export default router;
