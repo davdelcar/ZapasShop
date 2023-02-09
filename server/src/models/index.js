@@ -1,9 +1,9 @@
-import { Order } from "./Order.js";
-import { Shoe } from "./Shoe.js";
-import { Stock } from "./Stock.js";
-import { User } from "./User.js";
-import { Cart } from "./Cart.js";
-import { CartShoe } from "./CartShoe.js";
+import { Order } from './Order.js'
+import { Shoe } from './Shoe.js'
+import { Stock } from './Stock.js'
+import { User } from './User.js'
+import { Cart } from './Cart.js'
+import { CartShoe } from './CartShoe.js'
 
 User.hasMany(Order)
 Order.belongsTo(User)
@@ -20,4 +20,4 @@ CartShoe.belongsTo(Shoe)
 Cart.hasMany(CartShoe)
 CartShoe.belongsTo(Cart)
 
-export {User, Order, Cart, Stock, CartShoe, Shoe}
+export { User, Order, Cart, Stock, CartShoe, Shoe }
